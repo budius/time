@@ -18,7 +18,7 @@ class JvmTimeTestRule : TestWatcher() {
 
 	object JvmTimeProvider : Time.TimeProvider {
 		override fun getClockTime() = System.currentTimeMillis()
-		override fun getElapsedTime() = System.nanoTime() * 1_000_000
+		override fun getElapsedTime() = System.nanoTime() / 1_000_000
 	}
 
 }
