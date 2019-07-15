@@ -26,7 +26,7 @@ object Time {
 }
 
 class ElapsedTime(private val startTime: Long) {
-	val _laps = mutableMapOf<String, Long>()
+	private val _laps = mutableMapOf<String, Long>()
 	val laps: Map<String, Long> get() = _laps
 
 	fun elapsed() = Time.getElapsedTime() - startTime

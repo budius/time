@@ -17,6 +17,16 @@ class InjectTimeResponseTest {
 	}
 
 	@Test
+	fun returned_values_are_from_InjectTimeResponse_using_lambda() {
+		injectTime {
+			clockTimeResponse = 1L
+			elapsedTimeResponse = 2L
+			assertEquals(1L, Time.getEpochTime())
+			assertEquals(2L, Time.getElapsedTime())
+		}
+	}
+
+	@Test
 	fun measureElapsedTime() {
 		val injectTime = InjectTimeResponse()
 		injectTime.elapsedTimeResponse = 1L

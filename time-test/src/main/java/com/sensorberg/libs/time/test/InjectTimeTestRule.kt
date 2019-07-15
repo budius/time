@@ -38,3 +38,9 @@ class InjectTimeResponse : Time.TimeProvider {
 		Time.setProvider(null)
 	}
 }
+
+fun injectTime(block: InjectTimeResponse.() -> Unit) {
+	val injectTimeResponse = InjectTimeResponse()
+	block.invoke(injectTimeResponse)
+	injectTimeResponse.close()
+}
